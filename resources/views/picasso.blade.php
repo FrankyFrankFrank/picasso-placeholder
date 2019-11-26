@@ -20,17 +20,17 @@
         fill="url('#linear_gradient_01')"
     />
     <path
-        d="{{ $polyline_points }}"
+        d="{{ $wavey_line_points }}"
         style="
             fill: none;
             stroke: hsla({{ $background_hue }}, 80%, 40%, 0.5);
             stroke-width: 12;
-            transform-origin: {{ $polyline_transform_origin }};
+            transform-origin: {{ $wavey_line_transform_origin }};
         "
         transform="
-            rotate({{ $polyline_rotate }})
-            scale({{ $polyline_scale }})
-            translate({{ $polyline_translate_x / $polyline_scale }}, {{ $polyline_translate_y / $polyline_scale }})
+            rotate({{ $wavey_line_rotate }})
+            scale({{ $wavey_line_scale }})
+            translate({{ $wavey_line_translate_x / $wavey_line_scale }}, {{ $wavey_line_translate_y / $wavey_line_scale }})
         "
     />
     <circle cx="{{ $mid_left }}" cy="{{ $mid_top }}" r="{{ $left_eye_radius }}" fill="hsl({{ $background_hue}}, 80%, 90%)" style="filter:url(#shadow);" />

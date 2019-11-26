@@ -43,15 +43,15 @@ Route::get('/{width}/{height}', function ($width, $height) {
 
     $left_shape_polygon = join(" ", $left_shape_polygon_points);
 
-    $foo_length = str_repeat('20,20 ', rand(2,8));
+    $wave_length = str_repeat('20,20 ', rand(2,8));
 
-    $foo = array(
+    $wave = array(
         'M ' . strval($half_width - 40) . "," . strval($half_height - 40),
         'Q ' . strval($half_width - 20) . "," . strval($half_height - 40),
         strval($half_width - 20) . "," . strval($half_height - 20),
-        't ' . $foo_length,
+        't ' . $wave_length,
     );
-    // $foo = array(
+    // $wave = array(
     //     'M ' . strval($half_width - 40) . "," . strval($half_height - 40),
     //     't ' . strval($half_width - 20) . "," . strval($half_height - 40),
     //     't ' . strval($half_width - 20) . "," . strval($half_height - 20),
@@ -62,13 +62,13 @@ Route::get('/{width}/{height}', function ($width, $height) {
     //     't ' . strval($half_width + 40) . "," . strval($half_height + 20),
     //     't ' . strval($half_width + 40) . "," . strval($half_height + 40),
     // );
-    $polyline_points = join(" ", $foo);
+    $wavey_line_points = join(" ", $wave);
 
-    $polyline_translate_x = rand(-$half_width * 0.5, $half_width * 0.5);
-    $polyline_translate_y = rand(-$half_height * 0.5, $half_height * 0.5);
-    $polyline_scale = rand(10, 30) / 10;
-    $polyline_rotate = rand(0, 360);
-    $polyline_transform_origin = $half_width . "px " . $half_height . "px";
+    $wavey_line_translate_x = rand(-$half_width * 0.5, $half_width * 0.5);
+    $wavey_line_translate_y = rand(-$half_height * 0.5, $half_height * 0.5);
+    $wavey_line_scale = rand(10, 30) / 10;
+    $wavey_line_rotate = rand(0, 360);
+    $wavey_line_transform_origin = $half_width . "px " . $half_height . "px";
 
     return view('picasso', [
         'width' => $width,
@@ -88,11 +88,11 @@ Route::get('/{width}/{height}', function ($width, $height) {
 
         'left_shape_polygon' => $left_shape_polygon,
 
-        'polyline_points' => $polyline_points,
-        'polyline_translate_x' => $polyline_translate_x,
-        'polyline_translate_y' => $polyline_translate_y,
-        'polyline_scale' => $polyline_scale,
-        'polyline_rotate' => $polyline_rotate,
-        'polyline_transform_origin' => $polyline_transform_origin,
+        'wavey_line_points' => $wavey_line_points,
+        'wavey_line_translate_x' => $wavey_line_translate_x,
+        'wavey_line_translate_y' => $wavey_line_translate_y,
+        'wavey_line_scale' => $wavey_line_scale,
+        'wavey_line_rotate' => $wavey_line_rotate,
+        'wavey_line_transform_origin' => $wavey_line_transform_origin,
     ]);
 });
