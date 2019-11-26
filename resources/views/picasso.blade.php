@@ -12,12 +12,27 @@
         </filter>
     </defs>
 
-    <rect x="0"  y="0" width="{{ $width }}" height="{{ $height }}" fill="hsl({{ $background_hue }}, 20%, 90%)" />
-    <circle cx="{{ $right_eye_x_position }}" cy="{{ $right_eye_y_position }}" r="{{ $right_eye_radius }}" fill="hsl({{ $background_hue}}, 80%, 70%)" />
+    <rect x="0"  y="0" width="{{ $width }}" height="{{ $height }}" fill="hsl({{ $background_hue + 60 }}, 50%, 90%)" />
+    <circle cx="{{ $mid_right }}" cy="{{ $mid_bottom }}" r="{{ $right_eye_radius }}" fill="hsl({{ $background_hue + 70}}, 80%, 70%)" />
     <polygon
-        points="0,0 {{ $left_rectangle_width + $nose_width / 2 }},0 {{ $left_rectangle_point_three }},{{ $nose_height }} {{ $left_rectangle_point_four }},{{ $nose_height }} {{ $left_rectangle_width - $nose_width / 2 }},{{ $height }} 0,{{ $height }}"
+        points="{{ $left_shape_polygon }}"
         style="filter:url(#shadow);"
         fill="url('#linear_gradient_01')"
     />
-    <circle cx="{{ $left_eye_x_position }}" cy="{{ $left_eye_y_position }}" r="{{ $left_eye_radius }}" fill="hsl({{ $background_hue}}, 80%, 90%)" style="filter:url(#shadow);" />
+    <polyline
+        points="{{ $polyline_points }}"
+        style="
+            fill: none;
+            stroke: hsla({{ $background_hue }}, 80%, 40%, 0.5);
+            stroke-width: 12;
+            transform-origin: {{ $polyline_transform_origin }};
+        "
+        transform="
+            rotate({{ $polyline_rotate }})
+            scale({{ $polyline_scale }})
+            translate({{ $polyline_translate_x / $polyline_scale }}, {{ $polyline_translate_y / $polyline_scale }})
+        "
+    />
+    <circle cx="{{ $mid_left }}" cy="{{ $mid_top }}" r="{{ $left_eye_radius }}" fill="hsl({{ $background_hue}}, 80%, 90%)" style="filter:url(#shadow);" />
+
 </svg>
