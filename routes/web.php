@@ -32,12 +32,15 @@ Route::get('/{width}/{height}', function ($width, $height) {
     $left_eye_radius = rand($length_of_shortest_side / 10, $length_of_shortest_side / 8);
     $right_eye_radius = rand($length_of_shortest_side / 20, $length_of_shortest_side / 10);
 
+    $left_shape_skew_x_distance = rand($width / 10, $width / 8);
+    $left_shape_skew_y_distance = rand($height / 10, $height / 8);
+
     $left_shape_polygon_points = array(
         "0" . "," . "0",
-        $mid_x + $nose_width / 2 . "," . "0",
-        $mid_x + $nose_width / 2 . "," . $mid_y,
-        $mid_x - $nose_width / 2 . "," . $mid_y,
-        $mid_x - $nose_width / 2 . "," . $height,
+        $mid_x + $nose_width / 2 + $left_shape_skew_x_distance . "," . "0",
+        $mid_x + $nose_width / 2 . "," . ($mid_y + $left_shape_skew_y_distance),
+        $mid_x - $nose_width / 2 . "," . ($mid_y + $left_shape_skew_y_distance),
+        $mid_x - $nose_width / 2  - $left_shape_skew_x_distance . "," . $height,
         "0" . "," . $height,
     );
 
@@ -51,22 +54,12 @@ Route::get('/{width}/{height}', function ($width, $height) {
         strval($half_width - 20) . "," . strval($half_height - 20),
         't ' . $wave_length,
     );
-    // $wave = array(
-    //     'M ' . strval($half_width - 40) . "," . strval($half_height - 40),
-    //     't ' . strval($half_width - 20) . "," . strval($half_height - 40),
-    //     't ' . strval($half_width - 20) . "," . strval($half_height - 20),
-    //     't ' . $half_width . "," . strval($half_height - 20),
-    //     't ' . $half_width . "," . $half_height,
-    //     't ' . strval($half_width + 20) . "," . $half_height,
-    //     't ' . strval($half_width + 20) . "," . strval($half_height + 20),
-    //     't ' . strval($half_width + 40) . "," . strval($half_height + 20),
-    //     't ' . strval($half_width + 40) . "," . strval($half_height + 40),
-    // );
+
     $wavey_line_points = join(" ", $wave);
 
     $wavey_line_translate_x = rand(-$half_width * 0.5, $half_width * 0.5);
     $wavey_line_translate_y = rand(-$half_height * 0.5, $half_height * 0.5);
-    $wavey_line_scale = rand(10, 30) / 10;
+    $wavey_line_scale = rand(20, 40) / 10;
     $wavey_line_rotate = rand(0, 360);
     $wavey_line_transform_origin = $half_width . "px " . $half_height . "px";
 
