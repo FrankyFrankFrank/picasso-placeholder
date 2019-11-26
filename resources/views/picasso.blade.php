@@ -19,8 +19,8 @@
         style="filter:url(#shadow);"
         fill="url('#linear_gradient_01')"
     />
-    <polyline
-        points="{{ $polyline_points }}"
+    <path
+        d="{{ $polyline_points }}"
         style="
             fill: none;
             stroke: hsla({{ $background_hue }}, 80%, 40%, 0.5);

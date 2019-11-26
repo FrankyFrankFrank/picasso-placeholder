@@ -43,17 +43,25 @@ Route::get('/{width}/{height}', function ($width, $height) {
 
     $left_shape_polygon = join(" ", $left_shape_polygon_points);
 
+    $foo_length = str_repeat('20,20 ', rand(2,8));
+
     $foo = array(
-        strval($half_width - 40) . "," . strval($half_height - 40),
-        strval($half_width - 20) . "," . strval($half_height - 40),
+        'M ' . strval($half_width - 40) . "," . strval($half_height - 40),
+        'Q ' . strval($half_width - 20) . "," . strval($half_height - 40),
         strval($half_width - 20) . "," . strval($half_height - 20),
-        $half_width . "," . strval($half_height - 20),
-        $half_width . "," . $half_height,
-        strval($half_width + 20) . "," . $half_height,
-        strval($half_width + 20) . "," . strval($half_height + 20),
-        strval($half_width + 40) . "," . strval($half_height + 20),
-        strval($half_width + 40) . "," . strval($half_height + 40),
+        't ' . $foo_length,
     );
+    // $foo = array(
+    //     'M ' . strval($half_width - 40) . "," . strval($half_height - 40),
+    //     't ' . strval($half_width - 20) . "," . strval($half_height - 40),
+    //     't ' . strval($half_width - 20) . "," . strval($half_height - 20),
+    //     't ' . $half_width . "," . strval($half_height - 20),
+    //     't ' . $half_width . "," . $half_height,
+    //     't ' . strval($half_width + 20) . "," . $half_height,
+    //     't ' . strval($half_width + 20) . "," . strval($half_height + 20),
+    //     't ' . strval($half_width + 40) . "," . strval($half_height + 20),
+    //     't ' . strval($half_width + 40) . "," . strval($half_height + 40),
+    // );
     $polyline_points = join(" ", $foo);
 
     $polyline_translate_x = rand(-$half_width * 0.5, $half_width * 0.5);
