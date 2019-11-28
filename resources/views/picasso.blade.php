@@ -30,6 +30,9 @@
         points="{{ $left_shape_polygon }}"
         style="filter:url(#shadow);"
         fill="url('#linear_gradient_01')"
+        transform="
+            skewY({{ $left_shape_skew_y }})
+        "
     />
     <path
         d="{{ $wavey_line_points }}"
@@ -37,6 +40,7 @@
             fill: none;
             stroke: hsla({{ $hue }}, {{ $saturation }}%, 40%, 0.5);
             stroke-width: {{ $wavey_stroke_width }};
+            transform: skewX({{ $left_shape_skew_y }});
         "
         transform="
             rotate({{ $wavey_line_rotate }})

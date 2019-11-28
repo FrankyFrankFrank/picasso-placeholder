@@ -45,6 +45,10 @@ class PicassoController extends Controller
      */
     public function show(Request $request, $width, $height)
     {
+        if(!is_null($request->query('seed'))) {
+            srand(crc32($request->query('seed')));
+        }
+
         $hue = !is_null($request->query('hue')) ? $request->query('hue') : rand(0, 360);
         $saturation = !is_null($request->query('saturation')) ? $request->query('saturation') : 80;
 
@@ -55,30 +59,33 @@ class PicassoController extends Controller
         $viewport_x = -$half_width;
 
         $length_of_shortest_side = min([$width, $height]);
+        $legnth_of_longest_side = max([$width, $height]);
 
         $mid_left = -$width  / 4;
         $mid_right = $width / 4;
         $mid_top = -$height / 4;
         $mid_bottom = $height / 4;
 
-        $nose_width = rand($width / 30, $width / 10);
+        $nose_width = rand($width / 30, $width / 3);
 
-        $left_eye_radius = rand($length_of_shortest_side / 20, $length_of_shortest_side / 4);
+        $left_eye_radius = rand($length_of_shortest_side / 10, $length_of_shortest_side / 2);
         $left_eye_x_position = rand($viewport_x, 0);
 
-        $right_eye_radius = rand($length_of_shortest_side / 20, $length_of_shortest_side / 4);
+        $right_eye_radius = rand($length_of_shortest_side / 8, $length_of_shortest_side);
         $right_eye_x_position = rand(0, -$viewport_x);
 
         $left_shape_skew_x_distance = rand($width / 10, $width / 8);
         $left_shape_skew_y_distance = rand($height / 10, $height / 8);
 
+        $left_shape_skew_y = rand(-10,10);
+
         $left_shape_polygon_points = array(
-            $viewport_x . "," . $viewport_y,
-            "0" . "," . $viewport_y,
+            $viewport_x * 2 . "," . $viewport_y * 2,
+            "0" . "," . $viewport_y * 2,
             $nose_width / 2 . "," . $left_shape_skew_y_distance,
             -$nose_width / 2 . "," . $left_shape_skew_y_distance,
-            "0" . "," . -$viewport_y,
-            $viewport_x . "," . -$viewport_y,
+            "0" . "," . -$viewport_y * 2,
+            $viewport_x * 2 . "," . -$viewport_y * 2,
         );
 
         $left_shape_polygon = join(" ", $left_shape_polygon_points);
@@ -98,7 +105,7 @@ class PicassoController extends Controller
         $wavey_line_points = join(" ", $wave);
 
         $wavey_line_translate_x = -($number_of_waves * $wave_length) / 2;
-        $wavey_line_translate_y = rand(0, $length_of_shortest_side / 4);
+        $wavey_line_translate_y = rand(0, $length_of_shortest_side / 5);
         $wavey_line_scale = rand(20, 40) / 10;
         $wavey_line_rotate = rand(0, 360);
 
@@ -125,6 +132,8 @@ class PicassoController extends Controller
             'left_eye_x_position' => $left_eye_x_position,
 
             'left_shape_polygon' => $left_shape_polygon,
+
+            'left_shape_skew_y' => $left_shape_skew_y,
 
             'wavey_line_points' => $wavey_line_points,
             'wavey_line_translate_x' => $wavey_line_translate_x,
