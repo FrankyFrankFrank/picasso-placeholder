@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/{width}/{height}', function ($width, $height) {
-    $background_hue = rand(0, 360);
-
+Route::get('/{width}/{height}/{hue?}/{saturation?}', function ($width, $height, $user_hue = false, $user_saturation = false) {
+    $hue = $user_hue >= 0 ? $user_hue : rand(0, 360);
+    $saturation = $user_saturation >= 0 ? $user_saturation : 80;
     $half_width = $width / 2;
     $half_height = $height / 2;
 
@@ -73,10 +73,11 @@ Route::get('/{width}/{height}', function ($width, $height) {
         'width' => $width,
         'height' => $height,
 
+        'hue' => $hue,
+        'saturation' => $saturation,
+
         'viewport_x' => $viewport_x,
         'viewport_y' => $viewport_y,
-
-        'background_hue' => $background_hue,
 
         'mid_left' => $mid_left,
         'mid_top' => $mid_top,
