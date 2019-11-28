@@ -1,4 +1,5 @@
 <svg
+    viewBox="{{ $viewport_x }} {{ $viewport_y }} {{ $width }} {{ $height }}"
     width="{{ $width }}"
     height="{{ $height }}"
 >
@@ -12,7 +13,7 @@
         </filter>
     </defs>
 
-    <rect x="0"  y="0" width="{{ $width }}" height="{{ $height }}" fill="hsl({{ $background_hue + 60 }}, 50%, 90%)" />
+    <rect x="{{ $viewport_x }}"  y="{{ $viewport_y }}" width="{{ $width }}" height="{{ $height }}" fill="hsl({{ $background_hue + 60 }}, 50%, 90%)" />
     <circle cx="{{ $mid_right }}" cy="{{ $mid_bottom }}" r="{{ $right_eye_radius }}" fill="hsl({{ $background_hue + 70}}, 80%, 70%)" />
     <polygon
         points="{{ $left_shape_polygon }}"
@@ -24,13 +25,12 @@
         style="
             fill: none;
             stroke: hsla({{ $background_hue }}, 80%, 40%, 0.5);
-            stroke-width: 12;
-            transform-origin: {{ $wavey_line_transform_origin }};
+            stroke-width: {{ $wavey_stroke_width }};
         "
         transform="
             rotate({{ $wavey_line_rotate }})
             scale({{ $wavey_line_scale }})
-            translate({{ $wavey_line_translate_x / $wavey_line_scale }}, {{ $wavey_line_translate_y / $wavey_line_scale }})
+            translate({{ $wavey_line_translate_x }}, {{ $wavey_line_translate_y }})
         "
     />
     <circle cx="{{ $mid_left }}" cy="{{ $mid_top }}" r="{{ $left_eye_radius }}" fill="hsl({{ $background_hue}}, 80%, 90%)" style="filter:url(#shadow);" />
