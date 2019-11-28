@@ -17,15 +17,15 @@ Route::get('/{width}/{height}', function ($width, $height) {
     $half_width = $width / 2;
     $half_height = $height / 2;
 
+    $viewport_y = -$half_height;
+    $viewport_x = -$half_width;
+
     $length_of_shortest_side = min([$width, $height]);
 
-    $mid_x = rand($width * 0.25, $width * 0.75);
-    $mid_y = rand($height * 0.25, $height * 0.75);
-
-    $mid_left = $mid_x / 2;
-    $mid_right = $mid_left + $half_width;
-    $mid_top = $mid_y / 2;
-    $mid_bottom = $mid_y / 2 + $half_height;
+    $mid_left = -$width  / 4;
+    $mid_right = $width / 4;
+    $mid_top = -$height / 4;
+    $mid_bottom = $height / 4;
 
     $nose_width = rand($width / 30, $width / 10);
 
@@ -36,41 +36,45 @@ Route::get('/{width}/{height}', function ($width, $height) {
     $left_shape_skew_y_distance = rand($height / 10, $height / 8);
 
     $left_shape_polygon_points = array(
-        "0" . "," . "0",
-        $mid_x + $nose_width / 2 + $left_shape_skew_x_distance . "," . "0",
-        $mid_x + $nose_width / 2 . "," . ($mid_y + $left_shape_skew_y_distance),
-        $mid_x - $nose_width / 2 . "," . ($mid_y + $left_shape_skew_y_distance),
-        $mid_x - $nose_width / 2  - $left_shape_skew_x_distance . "," . $height,
-        "0" . "," . $height,
+        $viewport_x . "," . $viewport_y,
+        "0" . "," . $viewport_y,
+        $nose_width / 2 . "," . $left_shape_skew_y_distance,
+        -$nose_width / 2 . "," . $left_shape_skew_y_distance,
+        "0" . "," . -$viewport_y,
+        $viewport_x . "," . -$viewport_y,
     );
 
     $left_shape_polygon = join(" ", $left_shape_polygon_points);
 
-    $wave_length = str_repeat('20,20 ', rand(2,8));
+    $number_of_waves = rand(2,8);
+
+    $wavey_stroke_width = rand($length_of_shortest_side / 20, $length_of_shortest_side / 8);
+    $wave_length = rand($wavey_stroke_width, $wavey_stroke_width * 6);
+    $wave_sequence = str_repeat($wave_length . ' 0 ', $number_of_waves);
 
     $wave = array(
-        'M ' . strval($half_width - 40) . "," . strval($half_height - 40),
-        'Q ' . strval($half_width - 20) . "," . strval($half_height - 40),
-        strval($half_width - 20) . "," . strval($half_height - 20),
-        't ' . $wave_length,
+        "M -" . ($wave_length / 2) . ",0",
+        "Q 0 " . ($wave_length / 2) . ", " . ($wave_length / 2) . " 0",
+        't ' . $wave_sequence,
     );
 
     $wavey_line_points = join(" ", $wave);
 
-    $wavey_line_translate_x = rand(-$half_width * 0.5, $half_width * 0.5);
-    $wavey_line_translate_y = rand(-$half_height * 0.5, $half_height * 0.5);
+    $wavey_line_translate_x = -($number_of_waves * $wave_length) / 2;
+    $wavey_line_translate_y = rand(0, $length_of_shortest_side / 4);
     $wavey_line_scale = rand(20, 40) / 10;
     $wavey_line_rotate = rand(0, 360);
-    $wavey_line_transform_origin = $half_width . "px " . $half_height . "px";
+
 
     return view('picasso', [
         'width' => $width,
         'height' => $height,
 
+        'viewport_x' => $viewport_x,
+        'viewport_y' => $viewport_y,
+
         'background_hue' => $background_hue,
 
-        'mid_x' => $mid_x,
-        'mid_y' => $mid_y,
         'mid_left' => $mid_left,
         'mid_top' => $mid_top,
         'mid_right' => $mid_right,
@@ -86,6 +90,6 @@ Route::get('/{width}/{height}', function ($width, $height) {
         'wavey_line_translate_y' => $wavey_line_translate_y,
         'wavey_line_scale' => $wavey_line_scale,
         'wavey_line_rotate' => $wavey_line_rotate,
-        'wavey_line_transform_origin' => $wavey_line_transform_origin,
+        'wavey_stroke_width' => $wavey_stroke_width,
     ]);
 });
