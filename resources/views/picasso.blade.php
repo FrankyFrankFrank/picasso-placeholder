@@ -24,7 +24,7 @@
         cx="{{ $right_eye_x_position }}"
         cy="{{ $mid_bottom }}"
         r="{{ $right_eye_radius }}"
-        fill="hsl({{ $hue + 70}}, {{ $saturation }}%, 70%)"
+        fill="hsl({{ $hue + 70 }}, {{ $saturation }}%, 70%)"
     />
     <polygon
         points="{{ $left_shape_polygon }}"
@@ -48,7 +48,7 @@
         cx="{{ $left_eye_x_position }}"
         cy="{{ $mid_top }}"
         r="{{ $left_eye_radius }}"
-        fill="hsl({{ $hue}}, {{ $saturation }}%, 90%)"
+        fill="hsl({{ $hue }}, {{ $saturation }}%, 90%)"
         style="filter:url(#shadow);"
     />
 
