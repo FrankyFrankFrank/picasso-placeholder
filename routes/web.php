@@ -29,8 +29,11 @@ Route::get('/{width}/{height}', function ($width, $height) {
 
     $nose_width = rand($width / 30, $width / 10);
 
-    $left_eye_radius = rand($length_of_shortest_side / 10, $length_of_shortest_side / 8);
-    $right_eye_radius = rand($length_of_shortest_side / 20, $length_of_shortest_side / 10);
+    $left_eye_radius = rand($length_of_shortest_side / 20, $length_of_shortest_side / 4);
+    $left_eye_x_position = rand($viewport_x, 0);
+
+    $right_eye_radius = rand($length_of_shortest_side / 20, $length_of_shortest_side / 4);
+    $right_eye_x_position = rand(0, -$viewport_x);
 
     $left_shape_skew_x_distance = rand($width / 10, $width / 8);
     $left_shape_skew_y_distance = rand($height / 10, $height / 8);
@@ -81,7 +84,10 @@ Route::get('/{width}/{height}', function ($width, $height) {
         'mid_bottom' => $mid_bottom,
 
         'right_eye_radius' => $right_eye_radius,
+        'right_eye_x_position' => $right_eye_x_position,
+
         'left_eye_radius' => $left_eye_radius,
+        'left_eye_x_position' => $left_eye_x_position,
 
         'left_shape_polygon' => $left_shape_polygon,
 

@@ -14,7 +14,7 @@
     </defs>
 
     <rect x="{{ $viewport_x }}"  y="{{ $viewport_y }}" width="{{ $width }}" height="{{ $height }}" fill="hsl({{ $background_hue + 60 }}, 50%, 90%)" />
-    <circle cx="{{ $mid_right }}" cy="{{ $mid_bottom }}" r="{{ $right_eye_radius }}" fill="hsl({{ $background_hue + 70}}, 80%, 70%)" />
+    <circle cx="{{ $right_eye_x_position }}" cy="{{ $mid_bottom }}" r="{{ $right_eye_radius }}" fill="hsl({{ $background_hue + 70}}, 80%, 70%)" />
     <polygon
         points="{{ $left_shape_polygon }}"
         style="filter:url(#shadow);"
@@ -33,6 +33,12 @@
             translate({{ $wavey_line_translate_x }}, {{ $wavey_line_translate_y }})
         "
     />
-    <circle cx="{{ $mid_left }}" cy="{{ $mid_top }}" r="{{ $left_eye_radius }}" fill="hsl({{ $background_hue}}, 80%, 90%)" style="filter:url(#shadow);" />
+    <circle
+        cx="{{ $left_eye_x_position }}"
+        cy="{{ $mid_top }}"
+        r="{{ $left_eye_radius }}"
+        fill="hsl({{ $background_hue}}, 80%, 90%)"
+        style="filter:url(#shadow);"
+    />
 
 </svg>
