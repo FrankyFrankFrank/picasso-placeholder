@@ -87,17 +87,34 @@
                     </div>
                 </div>
             </section>
+            <section class="mb-16 flex flex-wrap">
+                <div class="w-full md:w-1/2 mb-8">
+                    <h3 class="uppercase tracking-widest text-xl">Multiple Customizations</h3>
+                    <p class="mb-2 text-gray-300">You can chain any number of valid query parameters onto the end of the url using the &amp; character between each parameter.</p>
+                    <p class="mb-2 text-gray-300">For example, if you want to generate a vibrant placholder image with a base colour of magenta, add the following to the end of the url:</p>
+                    <pre class="bg-gray-900 p-2 mt-2 mb-4">?saturation=100&hue=300</pre>
+                    <p class="text-gray-300 inline-block">Therefore a 400px wide 200px high vibrant magenta-based image would have this url:</p>
+                    <pre class="bg-gray-900 p-2 mt-2 mb-4">pcas.io/400/200?saturation=100&hue=300</pre>
+                    <p class="text-sm">Note: Using invalid parameters can cause pcas.io to return no image at all.</p>
+                </div>
+                <div class="w-full md:w-1/2 flex items-center justify-center">
+                    <div class="p-4">
+                        <img src="/400/200?saturation=100&hue=300" class="shadow-lg" />
+                        <figcaption>pcas.io/400/200?saturation=100&hue=300</figcaption>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="bg-blue-800 px-12 py-16 text-gray-100">
+        <div class="bg-purple-800 px-12 py-16 text-purple-100">
             <h2 class="font-bold text-xl mb-4">Repeated Results</h2>
             <section class="mb-16 flex flex-wrap">
                 <div class="w-full md:w-1/2 mb-8">
                     <h3 class="uppercase tracking-widest text-xl">Using a Seed</h3>
-                    <p class="mb-2 text-gray-300">You can use a seed to create consistent results. Placeholder images that are generated with a seed will always produce the same configuration.</p>
-                    <p class="mb-2 text-gray-300">For example, if you want to generate the same image multiple times, add this to end end of the url:</p>
-                    <pre class="bg-gray-900 p-2 mt-2 mb-4">?seed=12345</pre>
-                    <p class="text-gray-300 inline-block">Therefore a 100px wide 100px high placeholder with the seed '12345' would have this url:</p>
-                    <pre class="bg-gray-900 p-2 mt-2 mb-4">pcas.io/100/100?seed=12345</pre>
+                    <p class="mb-2 text-purple-300">You can use a seed to create consistent results. Placeholder images that are generated with a seed will always produce the same configuration.</p>
+                    <p class="mb-2 text-purple-300">For example, if you want to generate the same image multiple times, add this to end end of the url:</p>
+                    <pre class="bg-purple-900 p-2 mt-2 mb-4">?seed=12345</pre>
+                    <p class="text-purple-300 inline-block">Therefore a 100px wide 100px high placeholder with the seed '12345' would have this url:</p>
+                    <pre class="bg-purple-900 p-2 mt-2 mb-4">pcas.io/100/100?seed=12345</pre>
                 </div>
                 <div class="w-full md:w-1/2 flex flex-wrap justify-around">
                     <div class="w-1/3 text-center">
@@ -123,19 +140,19 @@
             <section class="mb-16 flex flex-wrap">
                 <div class="w-full md:w-1/2 mb-8">
                     <h3 class="uppercase tracking-widest text-xl">Saving The Image</h3>
-                    <p class="mb-2 text-gray-300">You can save the image as an SVG as you would any other image in the browser.</p>
+                    <p class="mb-2 text-purple-300">You can save the image as an SVG as you would any other image in the browser.</p>
                 </div>
             </section>
             <section class="mb-16 flex flex-wrap">
                 <div class="w-full md:w-1/2 mb-8">
                     <h3 class="uppercase tracking-widest text-xl">Manually Manipulating The Image</h3>
-                    <p class="mb-2 text-gray-300">Because the generated image is code, you are able to modify it as you would any other SVG.</p>
-                    <p class="mb-2 text-gray-300">Save the image to your computer and then edit the code in any text editor or IDE.</p>
+                    <p class="mb-2 text-purple-300">Because the generated image is code, you are able to modify it as you would any other SVG.</p>
+                    <p class="mb-2 text-purple-300">Save the image to your computer and then edit the code in any text editor or IDE.</p>
                 </div>
             </section>
         </div>
         <div class="bg-gray-200 text-gray-700 p-4">
-            <p>pcas.io was created by Adam Frank (github FrankyFrankFrank)</p>
+            <p class="text-right">pcas.io was created by Adam Frank | <a class="underline text-teal-500" href="https://twitter.com/frankyfraaank">twitter frankyfraaank</a> | <a class="underline text-teal-500" href="https://github.com/FrankyFrankFrank">github FrankyFrankFrank</a></p>
         </div>
     </body>
 </html>
