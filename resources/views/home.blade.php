@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Picassio SVG Placeholder Images</title>
+        <title>Pcas.io SVG Placeholder Images</title>
 
         <!-- Fonts -->
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     </head>
     <body>
         <div class="bg-gray-100 px-12 py-8">
-            <h1 class="border-b">Picassio</h1>
+            <h1 class="border-b">Pcas.io</h1>
             <div class="gallery-grid">
                 <div style="grid-area: left" class="flex items-center justify-center">
                     <img src="/500/300" class="shadow-lg" />
