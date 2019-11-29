@@ -37,14 +37,18 @@
                 </div>
             </div>
         </div>
-        <div class="bg-gray-800 px-12 py-16 text-gray-100">
-            <section class="mb-16">
-                <h2 class="font-bold text-lg mb-4">What is Picassio?</h2>
-                <p class="mb-4 text-gray-300">Use it to generate svg placeholder images for any purpose.</p>
+        <div class="bg-gray-900 px-12 py-24 text-gray-100">
+            <section>
+                <h2 class="font-bold text-xl mb-4">What is Pcas.io?</h2>
+                <p class="mb-4 text-gray-300">It generates visually-pleasing, semi-random compositions of shapes and colour as SVG code.</p>
+                <p class="mb-4 text-gray-300">Use it to generate images for any purpose.</p>
                 <script src="https://gist.github.com/FrankyFrankFrank/342a427cbc4dedcf381f19516c4113a2.js"></script>
             </section>
+        </div>
+        <div class="bg-gray-800 px-12 py-16 text-gray-100">
+            <h2 class="font-bold text-xl mb-4">Changing the look</h2>
             <section class="mb-16">
-                <h2 class="font-bold text-lg mb-4">Changing the size</h2>
+                <h3 class="uppercase tracking-widest text-xl">Size</h3>
                 <p class="mb-2 text-gray-300">To change the size of the generated image, change the url.</p>
                 <p class="mb-2 text-gray-300">The height and width are set by the first and second directory in the url, respectively.</p>
                 <p class="mb-2 text-gray-300">For example, if you want to generate a placholder image 500px wide and 200px high, change the url to:</p>
@@ -52,7 +56,7 @@
             </section>
             <section class="mb-16 flex flex-wrap">
                 <div class="w-full md:w-1/2 mb-8">
-                    <h2 class="font-bold text-lg mb-4">Setting a base hue</h2>
+                    <h3 class="uppercase tracking-widest text-xl">Hue</h3>
                     <p class="mb-2 text-gray-300">Picassio automatically generates a pleasing set of shapes and colours based on a random base hue.</p>
                     <p class="mb-2 text-gray-300">If you would like to constrain the image to a particular base hue between 0 and 360, you may do so by adding a query parameter.</p>
                     <p class="mb-2 text-gray-300">For example, if you want to generate a placholder image with a red base hue, add the following to the end of the url:</p>
@@ -61,7 +65,7 @@
                     <pre class="bg-gray-900 p-2 mt-2 mb-4">pcas.io/400/200?hue=360</pre>
                 </div>
                 <div class="w-full md:w-1/2 flex items-center justify-center">
-                    <div>
+                    <div class="p-4">
                         <img src="/400/200?hue=360" class="shadow-lg" />
                         <figcaption>pcas.io/400/200?hue=360</figcaption>
                     </div>
@@ -69,7 +73,7 @@
             </section>
             <section class="mb-16 flex flex-wrap">
                 <div class="w-full md:w-1/2 mb-8">
-                    <h2 class="font-bold text-lg mb-4">Setting a base saturation</h2>
+                    <h3 class="uppercase tracking-widest text-xl">Saturation</h3>
                     <p class="mb-2 text-gray-300">If you would like to constrain the image to a particular base saturation between 0 (greyscale) and 100 (max brightness), you may do so by adding a query parameter.</p>
                     <p class="mb-2 text-gray-300">For example, if you want to generate a greyscale placholder image, add the following to the end of the url:</p>
                     <pre class="bg-gray-900 p-2 mt-2 mb-4">?saturation=0</pre>
@@ -77,7 +81,7 @@
                     <pre class="bg-gray-900 p-2 mt-2 mb-4">pcas.io/400/200?saturation=0</pre>
                 </div>
                 <div class="w-full md:w-1/2 flex items-center justify-center">
-                    <div>
+                    <div class="p-4">
                         <img src="/400/200?saturation=0" class="shadow-lg" />
                         <figcaption>pcas.io/400/200?saturation=0</figcaption>
                     </div>
@@ -85,9 +89,10 @@
             </section>
         </div>
         <div class="bg-blue-800 px-12 py-16 text-gray-100">
+            <h2 class="font-bold text-xl mb-4">Repeated Results</h2>
             <section class="mb-16 flex flex-wrap">
                 <div class="w-full md:w-1/2 mb-8">
-                    <h2 class="font-bold text-lg mb-4">Using a Seed</h2>
+                    <h3 class="uppercase tracking-widest text-xl">Using a Seed</h3>
                     <p class="mb-2 text-gray-300">You can use a seed to create consistent results. Placeholder images that are generated with a seed will always produce the same configuration.</p>
                     <p class="mb-2 text-gray-300">For example, if you want to generate the same image multiple times, add this to end end of the url:</p>
                     <pre class="bg-gray-900 p-2 mt-2 mb-4">?seed=12345</pre>
@@ -115,6 +120,22 @@
                     </div>
                 </div>
             </section>
+            <section class="mb-16 flex flex-wrap">
+                <div class="w-full md:w-1/2 mb-8">
+                    <h3 class="uppercase tracking-widest text-xl">Saving The Image</h3>
+                    <p class="mb-2 text-gray-300">You can save the image as an SVG as you would any other image in the browser.</p>
+                </div>
+            </section>
+            <section class="mb-16 flex flex-wrap">
+                <div class="w-full md:w-1/2 mb-8">
+                    <h3 class="uppercase tracking-widest text-xl">Manually Manipulating The Image</h3>
+                    <p class="mb-2 text-gray-300">Because the generated image is code, you are able to modify it as you would any other SVG.</p>
+                    <p class="mb-2 text-gray-300">Save the image to your computer and then edit the code in any text editor or IDE.</p>
+                </div>
+            </section>
+        </div>
+        <div class="bg-gray-200 text-gray-700 p-4">
+            <p>pcas.io was created by Adam Frank (github FrankyFrankFrank)</p>
         </div>
     </body>
 </html>
