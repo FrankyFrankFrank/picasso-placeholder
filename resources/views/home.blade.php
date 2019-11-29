@@ -84,5 +84,37 @@
                 </div>
             </section>
         </div>
+        <div class="bg-blue-800 px-12 py-16 text-gray-100">
+            <section class="mb-16 flex flex-wrap">
+                <div class="w-full md:w-1/2 mb-8">
+                    <h2 class="font-bold text-lg mb-4">Using a Seed</h2>
+                    <p class="mb-2 text-gray-300">You can use a seed to create consistent results. Placeholder images that are generated with a seed will always produce the same configuration.</p>
+                    <p class="mb-2 text-gray-300">For example, if you want to generate the same image multiple times, add this to end end of the url:</p>
+                    <pre class="bg-gray-900 p-2 mt-2 mb-4">?seed=12345</pre>
+                    <p class="text-gray-300 inline-block">Therefore a 100px wide 100px high placeholder with the seed '12345' would have this url:</p>
+                    <pre class="bg-gray-900 p-2 mt-2 mb-4">pcas.io/100/100?seed=12345</pre>
+                </div>
+                <div class="w-full md:w-1/2 flex flex-wrap justify-around">
+                    <div class="w-1/3 text-center">
+                        <img src="/100/100?seed=12345" class="shadow-lg m-4 inline" />
+                    </div>
+                    <div class="w-1/3 text-center">
+                        <img src="/100/100?seed=12345" class="shadow-lg m-4 inline" />
+                    </div>
+                    <div class="w-1/3 text-center">
+                        <img src="/100/100?seed=12345" class="shadow-lg m-4 inline" />
+                    </div>
+                    <div class="w-1/3 text-center">
+                        <img src="/100/100?seed=12345" class="shadow-lg m-4 inline" />
+                    </div>
+                    <div class="w-1/3 text-center">
+                        <img src="/100/100?seed=12345" class="shadow-lg m-4 inline" />
+                    </div>
+                    <div class="w-1/3 text-center">
+                        <img src="/100/100?seed=12345" class="shadow-lg m-4 inline" />
+                    </div>
+                </div>
+            </section>
+        </div>
     </body>
 </html>
