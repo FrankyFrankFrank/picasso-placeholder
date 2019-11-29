@@ -36,11 +36,16 @@
                 </div>
             </div>
         </div>
-        <div class="bg-gray-800 px-12 py-8">
-            <section class="text-white">
+        <div class="bg-gray-800 px-12 py-16 text-gray-100">
+            <section class="mb-16">
                 <h2 class="font-bold">What is Picassio?</h2>
-                <p>Use it to generate placeholder images in svg format for any purpose.</p>
+                <p class="mb-4">Use it to generate svg placeholder images for any purpose.</p>
                 <script src="https://gist.github.com/FrankyFrankFrank/342a427cbc4dedcf381f19516c4113a2.js"></script>
+            </section>
+            <section class="mb-16">
+                <h2 class="font-bold">Changing the size</h2>
+                <p class="mb-4">To change the size of the generated image, change the url.</p>
+                <p class="mb-4 inline-block">For example, if you want to generate a placholder image 500px wide and 200px high, use <pre class="bg-gray-900 inline p-4 m-1">picass.io/500/200</pre> as the image source.</p>
             </section>
         </div>
     </body>
