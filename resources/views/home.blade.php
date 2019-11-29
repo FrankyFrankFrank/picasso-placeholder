@@ -48,7 +48,7 @@
                 <p class="mb-2 text-gray-300">To change the size of the generated image, change the url.</p>
                 <p class="mb-2 text-gray-300">The height and width are set by the first and second directory in the url, respectively.</p>
                 <p class="mb-2 text-gray-300">For example, if you want to generate a placholder image 500px wide and 200px high, change the url to:</p>
-                <pre class="bg-gray-900 p-2 mt-4">picass.io/500/200</pre>
+                <pre class="bg-gray-900 p-2 mt-4">pcas.io/500/200</pre>
             </section>
             <section class="mb-16 flex flex-wrap">
                 <div class="w-full md:w-1/2 mb-8">
@@ -58,12 +58,12 @@
                     <p class="mb-2 text-gray-300">For example, if you want to generate a placholder image with a red base hue, add the following to the end of the url:</p>
                     <pre class="bg-gray-900 p-2 mt-2 mb-4">?hue=360</pre>
                     <p class="text-gray-300 inline-block">Therefore a 400px wide 200px high red-based placeholder image would have this url:</p>
-                    <pre class="bg-gray-900 p-2 mt-2 mb-4">picass.io/400/200?hue=360</pre>
+                    <pre class="bg-gray-900 p-2 mt-2 mb-4">pcas.io/400/200?hue=360</pre>
                 </div>
                 <div class="w-full md:w-1/2 flex items-center justify-center">
                     <div>
                         <img src="/400/200?hue=360" class="shadow-lg" />
-                        <figcaption>picass.io/400/200?hue=360</figcaption>
+                        <figcaption>pcas.io/400/200?hue=360</figcaption>
                     </div>
                 </div>
             </section>
@@ -74,12 +74,12 @@
                     <p class="mb-2 text-gray-300">For example, if you want to generate a greyscale placholder image, add the following to the end of the url:</p>
                     <pre class="bg-gray-900 p-2 mt-2 mb-4">?saturation=0</pre>
                     <p class="text-gray-300 inline-block">Therefore a 400px wide 200px high greyscale placeholder image would have this url:</p>
-                    <pre class="bg-gray-900 p-2 mt-2 mb-4">picass.io/400/200?saturation=0</pre>
+                    <pre class="bg-gray-900 p-2 mt-2 mb-4">pcas.io/400/200?saturation=0</pre>
                 </div>
                 <div class="w-full md:w-1/2 flex items-center justify-center">
                     <div>
                         <img src="/400/200?saturation=0" class="shadow-lg" />
-                        <figcaption>picass.io/400/200?saturation=0</figcaption>
+                        <figcaption>pcas.io/400/200?saturation=0</figcaption>
                     </div>
                 </div>
             </section>
