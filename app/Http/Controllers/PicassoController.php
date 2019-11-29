@@ -109,8 +109,7 @@ class PicassoController extends Controller
         $wavey_line_scale = rand(20, 40) / 10;
         $wavey_line_rotate = rand(0, 360);
 
-
-        return view('picasso', [
+        $data = [
             'width' => $width,
             'height' => $height,
 
@@ -141,7 +140,11 @@ class PicassoController extends Controller
             'wavey_line_scale' => $wavey_line_scale,
             'wavey_line_rotate' => $wavey_line_rotate,
             'wavey_stroke_width' => $wavey_stroke_width,
-        ]);
+        ];
+
+        return response()
+        ->view('picasso', $data, 200)
+        ->header('Content-Type', 'image/svg+xml');
     }
 
     /**

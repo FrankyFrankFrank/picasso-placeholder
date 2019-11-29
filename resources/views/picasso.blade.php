@@ -1,4 +1,5 @@
 <svg
+    xmlns='http://www.w3.org/2000/svg'
     viewBox="{{ $viewport_x }} {{ $viewport_y }} {{ $width }} {{ $height }}"
     width="{{ $width }}"
     height="{{ $height }}"

@@ -11,4 +11,7 @@
 |
 */
 
+Route::get('/', function () {
+    return view('home');
+});
 Route::get('/{width}/{height}', 'PicassoController@show');
