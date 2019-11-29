@@ -67,6 +67,22 @@
                     </div>
                 </div>
             </section>
+            <section class="mb-16 flex flex-wrap">
+                <div class="w-full md:w-1/2 mb-8">
+                    <h2 class="font-bold text-lg mb-4">Setting a base saturation</h2>
+                    <p class="mb-2 text-gray-300">If you would like to constrain the image to a particular base saturation between 0 (greyscale) and 100 (max brightness), you may do so by adding a query parameter.</p>
+                    <p class="mb-2 text-gray-300">For example, if you want to generate a greyscale placholder image, add the following to the end of the url:</p>
+                    <pre class="bg-gray-900 p-2 mt-2 mb-4">?saturation=0</pre>
+                    <p class="text-gray-300 inline-block">Therefore a 400px wide 200px high greyscale placeholder image would have this url:</p>
+                    <pre class="bg-gray-900 p-2 mt-2 mb-4">picass.io/400/200?saturation=0</pre>
+                </div>
+                <div class="w-full md:w-1/2 flex items-center justify-center">
+                    <div>
+                        <img src="/400/200?saturation=0" class="shadow-lg" />
+                        <figcaption>picass.io/400/200?saturation=0</figcaption>
+                    </div>
+                </div>
+            </section>
         </div>
     </body>
 </html>
