@@ -56,9 +56,9 @@
                     <p class="mb-2 text-gray-300">Picassio automatically generates a pleasing set of shapes and colours based on a random base hue.</p>
                     <p class="mb-2 text-gray-300">If you would like to constrain the image to a particular base hue between 0 and 360, you may do so by adding a query parameter.</p>
                     <p class="mb-2 text-gray-300">For example, if you want to generate a placholder image with a red base hue, add the following to the end of the url:</p>
-                    <pre class="bg-gray-900 p-2 mt-4 mb-2">?hue=360</pre>
-                    <p class="mb-2 text-gray-300 inline-block">Therefore a 400px wide 200px high red-based placeholder image would have this url:</p>
-                    <pre class="bg-gray-900 p-2 mt-4">picass.io/400/200?hue=360</pre>
+                    <pre class="bg-gray-900 p-2 mt-2 mb-4">?hue=360</pre>
+                    <p class="text-gray-300 inline-block">Therefore a 400px wide 200px high red-based placeholder image would have this url:</p>
+                    <pre class="bg-gray-900 p-2 mt-2 mb-4">picass.io/400/200?hue=360</pre>
                 </div>
                 <div class="w-full md:w-1/2 flex items-center justify-center">
                     <div>
