@@ -13,7 +13,7 @@
             .gallery-grid {
                 display: grid;
                 grid-template-rows: 50vh 50vh;
-                grid-template-columns: 2fr 1fr;
+                grid-template-columns: 1fr 1fr;
                 grid-gap: 1rem;
                 grid-template-areas:
                     "left upperright"
@@ -63,7 +63,7 @@
             <section class="mb-16">
                 <h3 class="uppercase tracking-widest text-xl">Size</h3>
                 <p class="mb-2 text-gray-300">To change the size of the generated image, change the url.</p>
-                <p class="mb-2 text-gray-300">The height and width are set by the first and second directory in the url, respectively.</p>
+                <p class="mb-2 text-gray-300">The height and width are set by the first and second directory in the url.</p>
                 <p class="mb-2 text-gray-300">For example, if you want to generate a placholder image 500px wide and 200px high, change the url to:</p>
                 <pre class="whitespace-pre-wrap bg-gray-900 p-2 mt-4">pcas.io/500/200</pre>
             </section>
