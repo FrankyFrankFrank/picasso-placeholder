@@ -163,6 +163,18 @@
                     <p class="mb-2 text-purple-300">Save the image to your computer and then edit the code in any text editor or IDE.</p>
                 </div>
             </section>
+            <section class="mb-16 flex flex-wrap">
+                <div class="w-full md:w-1/2 mb-8">
+                    <h3 class="uppercase tracking-widest text-xl">CSS</h3>
+                    <p class="mb-2 text-purple-300">Treat this image as though it were any other in regards to CSS properties.</p>
+                    <p class="mb-2 text-purple-300">Use the image as a background, use the image inside an img tag, use it as embedded SVG.</p>
+                </div>
+                <div class="w-full md:w-1/2 flex flex-wrap justify-around">
+                    <div>
+                        <img src="/200/200" class="rounded-full" />
+                    </div>
+                </div>
+            </section>
         </div>
         <div class="bg-gray-200 text-gray-700 p-4">
             <p class="text-right">pcas.io was created by Adam Frank | <a class="underline text-teal-500" href="https://twitter.com/frankyfraaank">twitter frankyfraaank</a> | <a class="underline text-teal-500" href="https://github.com/FrankyFrankFrank">github FrankyFrankFrank</a></p>
