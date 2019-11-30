@@ -57,7 +57,7 @@
             <section class="mb-16 flex flex-wrap">
                 <div class="w-full md:w-1/2 mb-8">
                     <h3 class="uppercase tracking-widest text-xl">Hue</h3>
-                    <p class="mb-2 text-gray-300">Picassio automatically generates a pleasing set of shapes and colours based on a random base hue.</p>
+                    <p class="mb-2 text-gray-300">pcas.io automatically generates a pleasing set of shapes and colours based on a random base hue.</p>
                     <p class="mb-2 text-gray-300">If you would like to constrain the image to a particular base hue between 0 and 360, you may do so by adding a query parameter.</p>
                     <p class="mb-2 text-gray-300">For example, if you want to generate a placholder image with a red base hue, add the following to the end of the url:</p>
                     <pre class="whitespace-pre-wrap bg-gray-900 p-2 mt-2 mb-4">?hue=360</pre>
