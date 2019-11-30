@@ -68,24 +68,38 @@ class PicassoController extends Controller
 
         $nose_width = rand($width / 30, $width / 3);
 
-        $left_eye_radius = rand($length_of_shortest_side / 10, $length_of_shortest_side / 2);
+        $left_eye_radius = rand($length_of_shortest_side / 15, $length_of_shortest_side / 2);
         $left_eye_x_position = rand($viewport_x, 0);
 
         $right_eye_radius = rand($length_of_shortest_side / 8, $length_of_shortest_side);
         $right_eye_x_position = rand(0, -$viewport_x);
+        $left_eye_y_position = rand($mid_top, $mid_bottom);
 
         $left_shape_skew_x_distance = rand($width / 10, $width / 8);
         $left_shape_skew_y_distance = rand($height / 10, $height / 8);
 
         $left_shape_skew_y = rand(-10,10);
+        $left_shape_center_x = rand($mid_left, $mid_right);
+        $left_shape_rotate = rand(-10, 10);
+        $has_nose = (bool)rand(0,1);
 
         $left_shape_polygon_points = array(
             $viewport_x * 2 . "," . $viewport_y * 2,
-            "0" . "," . $viewport_y * 2,
-            $nose_width / 2 . "," . $left_shape_skew_y_distance,
-            -$nose_width / 2 . "," . $left_shape_skew_y_distance,
-            "0" . "," . -$viewport_y * 2,
-            $viewport_x * 2 . "," . -$viewport_y * 2,
+            $left_shape_center_x . "," . $viewport_y * 2,
+        );
+
+        if ($has_nose) {
+            array_push(
+                $left_shape_polygon_points,
+                $nose_width / 2 + $left_shape_center_x . "," . $left_shape_skew_y_distance,
+                -$nose_width / 2 + $left_shape_center_x . "," . $left_shape_skew_y_distance
+            );
+        }
+
+        array_push(
+            $left_shape_polygon_points,
+            $left_shape_center_x . "," . -$viewport_y * 2,
+            $viewport_x * 2 . "," . -$viewport_y * 2
         );
 
         $left_shape_polygon = join(" ", $left_shape_polygon_points);
@@ -129,10 +143,12 @@ class PicassoController extends Controller
 
             'left_eye_radius' => $left_eye_radius,
             'left_eye_x_position' => $left_eye_x_position,
+            'left_eye_y_position' => $left_eye_y_position,
 
             'left_shape_polygon' => $left_shape_polygon,
 
             'left_shape_skew_y' => $left_shape_skew_y,
+            'left_shape_rotate' => $left_shape_rotate,
 
             'wavey_line_points' => $wavey_line_points,
             'wavey_line_translate_x' => $wavey_line_translate_x,

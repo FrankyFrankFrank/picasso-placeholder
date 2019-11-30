@@ -9,33 +9,42 @@
             <stop offset="5%"  stop-color="hsl({{ $hue + 30 }}, {{ $saturation }}%, 70%)" />
             <stop offset="95%" stop-color="hsl({{ $hue }}, {{ $saturation }}%, 50%)" />
         </linearGradient>
+
         <filter id="shadow">
           <feDropShadow dx="1" dy="1" stdDeviation="2" flood-color="hsla({{ $hue + 30 }}, {{ $saturation }}%, 20%, 0.3)" />
         </filter>
     </defs>
 
     <rect
+        id="background"
         x="{{ $viewport_x }}"
         y="{{ $viewport_y }}"
         width="{{ $width }}"
         height="{{ $height }}"
         fill="hsl({{ $hue + 60 }}, {{ $saturation - 30 }}%, 90%)"
     />
+
     <circle
+        id="right-circle"
         cx="{{ $right_eye_x_position }}"
         cy="{{ $mid_bottom }}"
         r="{{ $right_eye_radius }}"
         fill="hsl({{ $hue + 70 }}, {{ $saturation }}%, 70%)"
     />
+
     <polygon
+        id="left-polygon"
         points="{{ $left_shape_polygon }}"
         style="filter:url(#shadow);"
         fill="url('#linear_gradient_01')"
         transform="
             skewY({{ $left_shape_skew_y }})
+            rotate({{ $left_shape_rotate }})
         "
     />
+
     <path
+        id="wavey-line"
         d="{{ $wavey_line_points }}"
         style="
             fill: none;
@@ -49,9 +58,11 @@
             translate({{ $wavey_line_translate_x }}, {{ $wavey_line_translate_y }})
         "
     />
+
     <circle
+        id="left-circle"
         cx="{{ $left_eye_x_position }}"
-        cy="{{ $mid_top }}"
+        cy="{{ $left_eye_y_position }}"
         r="{{ $left_eye_radius }}"
         fill="hsl({{ $hue }}, {{ $saturation }}%, 90%)"
         style="filter:url(#shadow);"
