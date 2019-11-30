@@ -52,7 +52,7 @@
                 <p class="mb-2 text-gray-300">To change the size of the generated image, change the url.</p>
                 <p class="mb-2 text-gray-300">The height and width are set by the first and second directory in the url, respectively.</p>
                 <p class="mb-2 text-gray-300">For example, if you want to generate a placholder image 500px wide and 200px high, change the url to:</p>
-                <pre class="bg-gray-900 p-2 mt-4">pcas.io/500/200</pre>
+                <pre class="whitespace-pre-wrap bg-gray-900 p-2 mt-4">pcas.io/500/200</pre>
             </section>
             <section class="mb-16 flex flex-wrap">
                 <div class="w-full md:w-1/2 mb-8">
@@ -60,9 +60,9 @@
                     <p class="mb-2 text-gray-300">Picassio automatically generates a pleasing set of shapes and colours based on a random base hue.</p>
                     <p class="mb-2 text-gray-300">If you would like to constrain the image to a particular base hue between 0 and 360, you may do so by adding a query parameter.</p>
                     <p class="mb-2 text-gray-300">For example, if you want to generate a placholder image with a red base hue, add the following to the end of the url:</p>
-                    <pre class="bg-gray-900 p-2 mt-2 mb-4">?hue=360</pre>
+                    <pre class="whitespace-pre-wrap bg-gray-900 p-2 mt-2 mb-4">?hue=360</pre>
                     <p class="text-gray-300 inline-block">Therefore a 400px wide 200px high red-based placeholder image would have this url:</p>
-                    <pre class="bg-gray-900 p-2 mt-2 mb-4">pcas.io/400/200?hue=360</pre>
+                    <pre class="whitespace-pre-wrap bg-gray-900 p-2 mt-2 mb-4">pcas.io/400/200?hue=360</pre>
                 </div>
                 <div class="w-full md:w-1/2 flex items-center justify-center">
                     <div class="p-4">
@@ -76,9 +76,9 @@
                     <h3 class="uppercase tracking-widest text-xl">Saturation</h3>
                     <p class="mb-2 text-gray-300">If you would like to constrain the image to a particular base saturation between 0 (greyscale) and 100 (max brightness), you may do so by adding a query parameter.</p>
                     <p class="mb-2 text-gray-300">For example, if you want to generate a greyscale placholder image, add the following to the end of the url:</p>
-                    <pre class="bg-gray-900 p-2 mt-2 mb-4">?saturation=0</pre>
+                    <pre class="whitespace-pre-wrap bg-gray-900 p-2 mt-2 mb-4">?saturation=0</pre>
                     <p class="text-gray-300 inline-block">Therefore a 400px wide 200px high greyscale placeholder image would have this url:</p>
-                    <pre class="bg-gray-900 p-2 mt-2 mb-4">pcas.io/400/200?saturation=0</pre>
+                    <pre class="whitespace-pre-wrap bg-gray-900 p-2 mt-2 mb-4">pcas.io/400/200?saturation=0</pre>
                 </div>
                 <div class="w-full md:w-1/2 flex items-center justify-center">
                     <div class="p-4">
@@ -92,9 +92,9 @@
                     <h3 class="uppercase tracking-widest text-xl">Multiple Customizations</h3>
                     <p class="mb-2 text-gray-300">You can chain any number of valid query parameters onto the end of the url using the &amp; character between each parameter.</p>
                     <p class="mb-2 text-gray-300">For example, if you want to generate a vibrant placholder image with a base colour of magenta, add the following to the end of the url:</p>
-                    <pre class="bg-gray-900 p-2 mt-2 mb-4">?saturation=100&hue=300</pre>
+                    <pre class="whitespace-pre-wrap bg-gray-900 p-2 mt-2 mb-4">?saturation=100&hue=300</pre>
                     <p class="text-gray-300 inline-block">Therefore a 400px wide 200px high vibrant magenta-based image would have this url:</p>
-                    <pre class="bg-gray-900 p-2 mt-2 mb-4">pcas.io/400/200?saturation=100&hue=300</pre>
+                    <pre class="whitespace-pre-wrap bg-gray-900 p-2 mt-2 mb-4">pcas.io/400/200?saturation=100&hue=300</pre>
                     <p class="text-sm">Note: Using invalid parameters can cause pcas.io to return no image at all.</p>
                 </div>
                 <div class="w-full md:w-1/2 flex items-center justify-center">
@@ -112,9 +112,9 @@
                     <h3 class="uppercase tracking-widest text-xl">Using a Seed</h3>
                     <p class="mb-2 text-purple-300">You can use a seed to create consistent results. Placeholder images that are generated with a seed will always produce the same configuration.</p>
                     <p class="mb-2 text-purple-300">For example, if you want to generate the same image multiple times, add this to end end of the url:</p>
-                    <pre class="bg-purple-900 p-2 mt-2 mb-4">?seed=12345</pre>
+                    <pre class="whitespace-pre-wrap bg-purple-900 p-2 mt-2 mb-4">?seed=12345</pre>
                     <p class="text-purple-300 inline-block">Therefore a 100px wide 100px high placeholder with the seed '12345' would have this url:</p>
-                    <pre class="bg-purple-900 p-2 mt-2 mb-4">pcas.io/100/100?seed=12345</pre>
+                    <pre class="whitespace-pre-wrap bg-purple-900 p-2 mt-2 mb-4">pcas.io/100/100?seed=12345</pre>
                 </div>
                 <div class="w-full md:w-1/2 flex flex-wrap justify-around">
                     <div class="w-1/3 text-center">
