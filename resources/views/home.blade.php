@@ -20,11 +20,24 @@
                     "left lowerright"
                 ;
             }
+
+            @media (max-width: 640px) {
+                .gallery-grid {
+                    grid-template-rows: auto;
+                    grid-template-columns: 1fr;
+                    grid-gap: 1rem;
+                    grid-template-areas:
+                        "left"
+                        "upperright"
+                        "lowerright"
+                    ;
+                }
+            }
         </style>
     </head>
     <body>
         <div class="bg-gray-100 px-12 py-8">
-            <h1 class="border-b">Pcas.io</h1>
+            <h1 class="border-b mb-4">Pcas.io</h1>
             <div class="gallery-grid">
                 <div style="grid-area: left" class="flex items-center justify-center">
                     <img src="/500/300" class="shadow-lg" />
