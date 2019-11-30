@@ -35,7 +35,7 @@
             }
         </style>
     </head>
-    <body>
+    <body class="bg-gray-100">
         <div class="bg-gray-100 px-12 py-8">
             <h1 class="border-b mb-4">Pcas.io</h1>
             <div class="gallery-grid">
