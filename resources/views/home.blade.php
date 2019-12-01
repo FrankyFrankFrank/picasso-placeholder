@@ -12,7 +12,7 @@
         <style>
             .gallery-grid {
                 display: grid;
-                grid-template-rows: 50vh 50vh;
+                grid-template-rows: 42vh 42vh;
                 grid-template-columns: 1fr 1fr;
                 grid-gap: 1rem;
                 grid-template-areas:
@@ -36,8 +36,8 @@
         </style>
     </head>
     <body class="bg-gray-100">
-        <div class="bg-gray-100 px-12 py-8">
-            <h1 class="border-b mb-4">Pcas.io</h1>
+        <div class="bg-gray-100 px-12">
+            <h1 class="border-b my-4">Pcas.io</h1>
             <div class="gallery-grid">
                 <div style="grid-area: left" class="flex items-center justify-center">
                     <img src="/500/300" class="shadow-lg" />
@@ -50,7 +50,7 @@
                 </div>
             </div>
         </div>
-        <div class="bg-gray-900 px-12 py-24 text-gray-100">
+        <div class="bg-gray-900 px-12 py-24 mt-4 text-gray-100">
             <section>
                 <h2 class="font-bold text-xl mb-4">What is Pcas.io?</h2>
                 <p class="mb-4 text-gray-300">It generates visually-pleasing, semi-random compositions of shapes and colour as SVG code.</p>
