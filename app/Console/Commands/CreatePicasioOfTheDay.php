@@ -39,7 +39,7 @@ class CreatePicasioOfTheDay extends Command
     public function handle()
     {
         $url = action('PicassoController@show', [ 'width' => 720, 'height' => 720 ]);
-        $date = date('Y-m-d');
+        $date = date('Y-m-d H:i');
         $pathToImage = public_path('pcasio_of_the_day/potd_' . $date . '.png');
 
         Browsershot::url($url)
