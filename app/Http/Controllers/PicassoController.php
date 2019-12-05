@@ -49,12 +49,10 @@ class PicassoController extends Controller
      */
     public function show(Request $request, $width, $height)
     {
-        if(!is_null($request->query('seed'))) {
-            srand(crc32($request->query('seed')));
-        }
+        $this->generateSeed($request);
 
-        $hue = !is_null($request->query('hue')) ? $request->query('hue') : rand(self::HUE_MIN, self::HUE_MAX);
-        $saturation = !is_null($request->query('saturation')) ? $request->query('saturation') : self::SATURATION_DEFAULT;
+        $hue = $this->requestHue($request);
+        $saturation = $request->has('saturation') ? $request->query('saturation') : self::SATURATION_DEFAULT;
 
         $half_width = $width / 2;
         $half_height = $height / 2;
@@ -165,6 +163,17 @@ class PicassoController extends Controller
         return response()
         ->view('picasso', $data, 200)
         ->header('Content-Type', 'image/svg+xml');
+    }
+
+    private function generateSeed(Request $request)
+    {
+        if($request->has('seed')) {
+            srand(crc32($request->query('seed')));
+        }
+    }
+
+    private function requestHue($request) {
+        return $request->has('hue') ? $request->query('hue') : rand(self::HUE_MIN, self::HUE_MAX);
     }
 
     /**
