@@ -52,7 +52,7 @@ class PicassoController extends Controller
         $this->generateSeed($request);
 
         $hue = $this->requestHue($request);
-        $saturation = $request->has('saturation') ? $request->query('saturation') : self::SATURATION_DEFAULT;
+        $saturation = $this->requestSaturation($request);
 
         $half_width = $width / 2;
         $half_height = $height / 2;
@@ -174,6 +174,10 @@ class PicassoController extends Controller
 
     private function requestHue($request) {
         return $request->has('hue') ? $request->query('hue') : rand(self::HUE_MIN, self::HUE_MAX);
+    }
+
+    private function requestSaturation($request) {
+        return $request->has('saturation') ? $request->query('saturation') : self::SATURATION_DEFAULT;
     }
 
     /**
