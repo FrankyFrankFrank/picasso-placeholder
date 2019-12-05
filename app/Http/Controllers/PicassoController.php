@@ -37,6 +37,10 @@ class PicassoController extends Controller
         //
     }
 
+    const HUE_MIN = 0;
+    const HUE_MAX = 360;
+    const SATURATION_DEFAULT = 80;
+
     /**
      * Display the specified resource.
      *
@@ -49,8 +53,8 @@ class PicassoController extends Controller
             srand(crc32($request->query('seed')));
         }
 
-        $hue = !is_null($request->query('hue')) ? $request->query('hue') : rand(0, 360);
-        $saturation = !is_null($request->query('saturation')) ? $request->query('saturation') : 80;
+        $hue = !is_null($request->query('hue')) ? $request->query('hue') : rand(self::HUE_MIN, self::HUE_MAX);
+        $saturation = !is_null($request->query('saturation')) ? $request->query('saturation') : self::SATURATION_DEFAULT;
 
         $half_width = $width / 2;
         $half_height = $height / 2;
