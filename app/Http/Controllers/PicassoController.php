@@ -4,14 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SvgRequest;
 
+/**
+ * Class PicassoController
+ * @package App\Http\Controllers
+ */
 class PicassoController extends Controller
 {
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param SvgRequest $request
+     * @param String $width
+     * @param String $height
+     * @return Controller $this
      */
     public function show(SvgRequest $request, $width, $height)
     {
