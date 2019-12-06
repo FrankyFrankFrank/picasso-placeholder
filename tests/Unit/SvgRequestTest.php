@@ -11,7 +11,7 @@ use Tests\TestCase;
 class SvgRequestTest extends TestCase
 {
     /** @test **/
-    public function it_returns_a_random_hue_if_not_present_in_query()
+    public function hue_is_random_if_not_present_in_query()
     {
         $request = SvgRequest::create(route('generate', ['width' => 100, 'height' => 100]));
 
@@ -20,11 +20,10 @@ class SvgRequestTest extends TestCase
     }
 
     /** @test **/
-    public function it_returns_a_random_saturation_if_not_present_in_query()
+    public function saturation_is_80_if_not_present_in_query()
     {
         $request = SvgRequest::create(route('generate', ['width' => 100, 'height' => 100]));
 
-        $this->assertTrue($request->saturation() >= 0);
-        $this->assertTrue($request->saturation() <= 100);
+        $this->assertEquals($request->saturation(), 80);
     }
 }
