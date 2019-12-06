@@ -91,39 +91,40 @@ class PicassoController extends Controller
         $wavey_line_scale = rand(20, 40) / 10;
         $wavey_line_rotate = rand(0, 360);
 
-        $data = [];
+        $data = [
+            'width' => $width,
+            'height' => $height,
 
-        $data['width'] = $width;
-        $data['height'] = $height;
+            'hue' => $hue,
+            'saturation' => $saturation,
 
-        $data['hue'] = $hue;
-        $data['saturation'] = $saturation;
-        $data['viewport_x'] = $viewport_x;
-        $data['viewport_y'] = $viewport_y;
+            'viewport_x' => $viewport_x,
+            'viewport_y' => $viewport_y,
 
-        $data['mid_left'] = $mid_left;
-        $data['mid_top'] = $mid_top;
-        $data['mid_right'] = $mid_right;
-        $data['mid_bottom'] = $mid_bottom;
+            'mid_left' => $mid_left,
+            'mid_top' => $mid_top,
+            'mid_right' => $mid_right,
+            'mid_bottom' => $mid_bottom,
 
-        $data['right_eye_radius'] = $right_eye_radius;
-        $data['right_eye_x_position'] = $right_eye_x_position;
+            'right_eye_radius' => $right_eye_radius,
+            'right_eye_x_position' => $right_eye_x_position,
 
-        $data['left_eye_radius'] = $left_eye_radius;
-        $data['left_eye_x_position'] = $left_eye_x_position;
-        $data['left_eye_y_position'] = $left_eye_y_position;
+            'left_eye_radius' => $left_eye_radius,
+            'left_eye_x_position' => $left_eye_x_position,
+            'left_eye_y_position' => $left_eye_y_position,
 
-        $data['left_shape_polygon'] = $left_shape_polygon;
+            'left_shape_polygon' => $left_shape_polygon,
 
-        $data['left_shape_skew_y'] = $left_shape_skew_y;
-        $data['left_shape_rotate'] = $left_shape_rotate;
+            'left_shape_skew_y' => $left_shape_skew_y,
+            'left_shape_rotate' => $left_shape_rotate,
 
-        $data['wavey_line_points'] = $wavey_line_points;
-        $data['wavey_line_translate_x'] = $wavey_line_translate_x;
-        $data['wavey_line_translate_y'] = $wavey_line_translate_y;
-        $data['wavey_line_scale'] = $wavey_line_scale;
-        $data['wavey_line_rotate'] = $wavey_line_rotate;
-        $data['wavey_stroke_width'] = $wavey_stroke_width;
+            'wavey_line_points' => $wavey_line_points,
+            'wavey_line_translate_x' => $wavey_line_translate_x,
+            'wavey_line_translate_y' => $wavey_line_translate_y,
+            'wavey_line_scale' => $wavey_line_scale,
+            'wavey_line_rotate' => $wavey_line_rotate,
+            'wavey_stroke_width' => $wavey_stroke_width,
+        ];
 
         return response()
         ->view('picasso', $data, 200)
