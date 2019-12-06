@@ -36,4 +36,15 @@ class PcasioTest extends TestCase
 
         $response->assertViewHas('saturation', $expected_saturation);
     }
+    
+    /** @test **/
+    public function itHasTheCorrectViewportOrigin()
+    {
+        $width = '420';
+        $height = '630';
+        $response = $this->get('/'. $width . '/' . $height);
+
+        $response->assertViewHas('viewport_x', -210);
+        $response->assertViewHas('viewport_y', -315);
+    }
 }
