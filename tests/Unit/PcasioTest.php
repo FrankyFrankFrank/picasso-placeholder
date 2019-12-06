@@ -42,9 +42,24 @@ class PcasioTest extends TestCase
     {
         $width = '420';
         $height = '630';
+
         $response = $this->get('/'. $width . '/' . $height);
 
         $response->assertViewHas('viewport_x', -210);
         $response->assertViewHas('viewport_y', -315);
+    }
+
+    /** @test **/
+    public function itHasTheCorrectMidpoints()
+    {
+        $width = '420';
+        $height = '640';
+
+        $response = $this->get('/'. $width . '/' . $height);
+
+        $response->assertViewHas('mid_left', -105);
+        $response->assertViewHas('mid_right', 105);
+        $response->assertViewHas('mid_bottom', 160);
+        $response->assertViewHas('mid_top', -160);
     }
 }
