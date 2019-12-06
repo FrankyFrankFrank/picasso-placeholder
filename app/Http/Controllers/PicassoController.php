@@ -55,26 +55,7 @@ class PicassoController extends Controller
         $left_shape_rotate = rand(-10, 10);
         $has_nose = (bool)rand(0,1);
 
-        $left_shape_polygon_points = array(
-            $viewport_x * 2 . "," . $viewport_y * 2,
-            $left_shape_center_x . "," . $viewport_y * 2,
-        );
-
-        if ($has_nose) {
-            array_push(
-                $left_shape_polygon_points,
-                $nose_width / 2 + $left_shape_center_x . "," . $left_shape_skew_y_distance,
-                -$nose_width / 2 + $left_shape_center_x . "," . $left_shape_skew_y_distance
-            );
-        }
-
-        array_push(
-            $left_shape_polygon_points,
-            $left_shape_center_x . "," . -$viewport_y * 2,
-            $viewport_x * 2 . "," . -$viewport_y * 2
-        );
-
-        $left_shape_polygon = join(" ", $left_shape_polygon_points);
+        $left_shape_polygon = $this->generate_left_polygon($viewport_x, $viewport_y, $left_shape_center_x, $has_nose, $nose_width, $left_shape_skew_y_distance);
 
         $number_of_waves = rand(2,8);
 
@@ -131,8 +112,8 @@ class PicassoController extends Controller
         ];
 
         return response()
-        ->view('picasso', $data, 200)
-        ->header('Content-Type', 'image/svg+xml');
+            ->view('picasso', $data, 200)
+            ->header('Content-Type', 'image/svg+xml');
     }
 
     private function generateSeed(SvgRequest $request)
@@ -140,6 +121,39 @@ class PicassoController extends Controller
         if($request->has('seed')) {
             srand(crc32($request->query('seed')));
         }
+    }
+
+    /**
+     * @param int $viewport_x
+     * @param int $viewport_y
+     * @param int $left_shape_center_x
+     * @param bool $has_nose
+     * @param int $nose_width
+     * @param int $left_shape_skew_y_distance
+     * @return array
+     */
+    private function generate_left_polygon($viewport_x, $viewport_y, $left_shape_center_x, $has_nose, $nose_width, $left_shape_skew_y_distance)
+    {
+        $points = array(
+            $viewport_x * 2 . "," . $viewport_y * 2,
+            $left_shape_center_x . "," . $viewport_y * 2,
+        );
+
+        if ($has_nose) {
+            array_push(
+                $points,
+                $nose_width / 2 + $left_shape_center_x . "," . $left_shape_skew_y_distance,
+                -$nose_width / 2 + $left_shape_center_x . "," . $left_shape_skew_y_distance
+            );
+        }
+
+        array_push(
+            $points,
+            $left_shape_center_x . "," . -$viewport_y * 2,
+            $viewport_x * 2 . "," . -$viewport_y * 2
+        );
+
+        return join(" ", $points);
     }
 
 }
