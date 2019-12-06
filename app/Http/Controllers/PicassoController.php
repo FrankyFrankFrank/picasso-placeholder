@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\SvgRequest;
 
 class PicassoController extends Controller
 {
@@ -37,22 +37,18 @@ class PicassoController extends Controller
         //
     }
 
-    const HUE_MIN = 0;
-    const HUE_MAX = 360;
-    const SATURATION_DEFAULT = 80;
-
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $width, $height)
+    public function show(SvgRequest $request, $width, $height)
     {
         $this->generateSeed($request);
 
-        $hue = $this->requestHue($request);
-        $saturation = $this->requestSaturation($request);
+        $hue = $request->hue();
+        $saturation = $request->saturation();
 
         $half_width = $width / 2;
         $half_height = $height / 2;
@@ -165,19 +161,11 @@ class PicassoController extends Controller
         ->header('Content-Type', 'image/svg+xml');
     }
 
-    private function generateSeed(Request $request)
+    private function generateSeed(SvgRequest $request)
     {
         if($request->has('seed')) {
             srand(crc32($request->query('seed')));
         }
-    }
-
-    private function requestHue($request) {
-        return $request->has('hue') ? $request->query('hue') : rand(self::HUE_MIN, self::HUE_MAX);
-    }
-
-    private function requestSaturation($request) {
-        return $request->has('saturation') ? $request->query('saturation') : self::SATURATION_DEFAULT;
     }
 
     /**
