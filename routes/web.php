@@ -14,4 +14,4 @@
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/{width}/{height}', 'PicassoController@show');
+Route::get('/{width}/{height}', 'PicassoController@show')->name('generate');
