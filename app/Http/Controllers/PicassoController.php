@@ -63,13 +63,7 @@ class PicassoController extends Controller
         $wave_length = rand($wavey_stroke_width, $wavey_stroke_width * 6);
         $wave_sequence = str_repeat($wave_length . ' 0 ', $number_of_waves);
 
-        $wave = array(
-            "M -" . ($wave_length / 2) . ",0",
-            "Q 0 " . ($wave_length / 2) . ", " . ($wave_length / 2) . " 0",
-            't ' . $wave_sequence,
-        );
-
-        $wavey_line_points = join(" ", $wave);
+        $wavey_line_points = $this->generate_wavey_line_points($wave_length, $wave_sequence);
 
         $wavey_line_translate_x = -($number_of_waves * $wave_length) / 2;
         $wavey_line_translate_y = rand(0, $length_of_shortest_side / 5);
@@ -154,6 +148,21 @@ class PicassoController extends Controller
         );
 
         return join(" ", $points);
+    }
+
+    /**
+     * @param $wave_length
+     * @param $wave_sequence
+     * @return string
+     */
+    private function generate_wavey_line_points($wave_length, $wave_sequence): string
+    {
+        $wave = array(
+            "M -" . ($wave_length / 2) . ",0",
+            "Q 0 " . ($wave_length / 2) . ", " . ($wave_length / 2) . " 0",
+            't ' . $wave_sequence,
+        );
+        return join(" ", $wave);
     }
 
 }
