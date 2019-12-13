@@ -64,19 +64,28 @@ class PcasioTest extends TestCase
     }
 
     /** @test **/
-    public function itHasTheCorrectRightEyeRadius()
+    public function itHasTheCorrectRightEyeValues()
     {
         $width = '420';
         $height = '640';
 
+        $half_width = $width / 2;
+
         $response = $this->get('/'. $width . '/' . $height);
-//        rand($length_of_shortest_side / 8, $length_of_shortest_side);
 
         $this->assertThat(
             $response->viewData('right_eye_radius'),
             $this->logicalAnd(
                 $this->greaterThan($width / 8),
                 $this->lessThan($width)
+            )
+        );
+
+        $this->assertThat(
+            $response->viewData('right_eye_x_position'),
+            $this->logicalAnd(
+                $this->greaterThan(0),
+                $this->lessThan($half_width)
             )
         );
     }
