@@ -62,4 +62,22 @@ class PcasioTest extends TestCase
         $response->assertViewHas('mid_bottom', 160);
         $response->assertViewHas('mid_top', -160);
     }
+
+    /** @test **/
+    public function itHasTheCorrectRightEyeRadius()
+    {
+        $width = '420';
+        $height = '640';
+
+        $response = $this->get('/'. $width . '/' . $height);
+//        rand($length_of_shortest_side / 8, $length_of_shortest_side);
+
+        $this->assertThat(
+            $response->viewData('right_eye_radius'),
+            $this->logicalAnd(
+                $this->greaterThan($width / 8),
+                $this->lessThan($width)
+            )
+        );
+    }
 }
