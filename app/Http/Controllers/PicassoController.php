@@ -45,10 +45,6 @@ class PicassoController extends Controller
         $right_eye_radius = rand($length_of_shortest_side / 8, $length_of_shortest_side);
         $right_eye_x_position = rand(0, -$viewport_x);
 
-        $left_shape = $this->generate_left_polygon($width, $height, $mid_left, $mid_right, $viewport_x, $viewport_y);
-
-        $wavey_line = $this->generate_wavey_line($length_of_shortest_side);
-
         $data = [
             'width' => $width,
             'height' => $height,
@@ -71,9 +67,9 @@ class PicassoController extends Controller
             'left_eye_x_position' => $left_eye_x_position,
             'left_eye_y_position' => $left_eye_y_position,
 
-            'left_shape' => $left_shape,
+            'left_shape' => $this->generate_left_polygon($width, $height, $mid_left, $mid_right, $viewport_x, $viewport_y),
 
-            'wavey_line' => $wavey_line,
+            'wavey_line' => $this->generate_wavey_line($length_of_shortest_side),
         ];
 
         return response()
