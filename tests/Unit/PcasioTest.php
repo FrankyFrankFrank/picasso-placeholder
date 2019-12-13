@@ -36,7 +36,7 @@ class PcasioTest extends TestCase
 
         $response->assertViewHas('saturation', $expected_saturation);
     }
-    
+
     /** @test **/
     public function itHasTheCorrectViewportOrigin()
     {
@@ -76,15 +76,15 @@ class PcasioTest extends TestCase
         $this->assertThat(
             $response->viewData('right_eye_radius'),
             $this->logicalAnd(
-                $this->greaterThan($width / 8),
-                $this->lessThan($width)
+                $this->greaterThanOrEqual($width / 8),
+                $this->lessThanOrEqual($width)
             )
         );
 
         $this->assertThat(
             $response->viewData('right_eye_x_position'),
             $this->logicalAnd(
-                $this->greaterThan(0),
+                $this->greaterThanOrEqual(0),
                 $this->lessThanOrEqual($half_width)
             )
         );
@@ -110,24 +110,24 @@ class PcasioTest extends TestCase
         $this->assertThat(
             $response->viewData('left_eye_radius'),
             $this->logicalAnd(
-                $this->greaterThan($expected_min_radius),
-                $this->lessThan($expected_max_radius)
+                $this->greaterThanOrEqual($expected_min_radius),
+                $this->lessThanOrEqual($expected_max_radius)
             )
         );
 
         $this->assertThat(
             $response->viewData('left_eye_x_position'),
             $this->logicalAnd(
-                $this->greaterThan($expected_min_x_position),
-                $this->lessThan($expected_max_x_position)
+                $this->greaterThanOrEqual($expected_min_x_position),
+                $this->lessThanOrEqual($expected_max_x_position)
             )
         );
 
         $this->assertThat(
             $response->viewData('left_eye_y_position'),
             $this->logicalAnd(
-                $this->greaterThan($expected_min_y_position),
-                $this->lessThan($expected_max_y_position)
+                $this->greaterThanOrEqual($expected_min_y_position),
+                $this->lessThanOrEqual($expected_max_y_position)
             )
         );
     }
