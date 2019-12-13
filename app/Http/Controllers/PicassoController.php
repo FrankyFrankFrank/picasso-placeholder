@@ -120,30 +120,30 @@ class PicassoController extends Controller
     /**
      * @param int $viewport_x
      * @param int $viewport_y
-     * @param int $left_shape_center_x
+     * @param int $center_x
      * @param bool $has_nose
      * @param int $nose_width
-     * @param int $left_shape_skew_y_distance
+     * @param int $skew_y_distance
      * @return array
      */
-    private function generate_left_polygon($viewport_x, $viewport_y, $left_shape_center_x, $has_nose, $nose_width, $left_shape_skew_y_distance)
+    private function generate_left_polygon($viewport_x, $viewport_y, $center_x, $has_nose, $nose_width, $skew_y_distance)
     {
         $points = array(
             $viewport_x * 2 . "," . $viewport_y * 2,
-            $left_shape_center_x . "," . $viewport_y * 2,
+            $center_x . "," . $viewport_y * 2,
         );
 
         if ($has_nose) {
             array_push(
                 $points,
-                $nose_width / 2 + $left_shape_center_x . "," . $left_shape_skew_y_distance,
-                -$nose_width / 2 + $left_shape_center_x . "," . $left_shape_skew_y_distance
+                $nose_width / 2 + $center_x . "," . $skew_y_distance,
+                -$nose_width / 2 + $center_x . "," . $skew_y_distance
             );
         }
 
         array_push(
             $points,
-            $left_shape_center_x . "," . -$viewport_y * 2,
+            $center_x . "," . -$viewport_y * 2,
             $viewport_x * 2 . "," . -$viewport_y * 2
         );
 
