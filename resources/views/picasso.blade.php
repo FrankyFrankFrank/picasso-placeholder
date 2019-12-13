@@ -34,12 +34,12 @@
 
     <polygon
         id="left-polygon"
-        points="{{ $left_shape_polygon }}"
+        points="{{ $left_shape['polygon'] }}"
         style="filter:url(#shadow);"
         fill="url('#linear_gradient_01')"
         transform="
-            skewY({{ $left_shape_skew_y }})
-            rotate({{ $left_shape_rotate }})
+            skewY({{ $left_shape['skew_y'] }})
+            rotate({{ $left_shape['rotate'] }})
         "
     />
 
@@ -50,7 +50,7 @@
             fill: none;
             stroke: hsla({{ $hue }}, {{ $saturation }}%, 40%, 0.5);
             stroke-width: {{ $wavey_line['stroke_width'] }};
-            transform: skewX({{ $left_shape_skew_y }});
+            transform: skewX({{ $left_shape['skew_y'] }});
         "
         transform="
             rotate({{ $wavey_line['rotate'] }})

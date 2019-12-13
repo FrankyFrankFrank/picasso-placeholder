@@ -26,15 +26,15 @@
 
     <circle
         id="right-circle"
-        cx="4"
+        cx="34"
         cy="25"
-        r="31"
+        r="15"
         fill="hsl(345, 80%, 70%)"
     />
 
     <polygon
         id="left-polygon"
-        points="-100,-100 -13,-100 -4.5,12 -21.5,12 -13,100 -100,100"
+        points="-100,-100 -13,-100 -9.5,12 -16.5,12 -13,100 -100,100"
         style="filter:url(#shadow);"
         fill="url(\'#linear_gradient_01\')"
         transform="
@@ -61,9 +61,9 @@
 
     <circle
         id="left-circle"
-        cx="-1"
-        cy="11"
-        r="21"
+        cx="-26"
+        cy="24"
+        r="9"
         fill="hsl(275, 80%, 90%)"
         style="filter:url(#shadow);"
     />
