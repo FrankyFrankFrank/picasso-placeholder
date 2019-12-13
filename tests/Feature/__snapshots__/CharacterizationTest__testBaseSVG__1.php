@@ -26,9 +26,9 @@
 
     <circle
         id="right-circle"
-        cx="34"
+        cx="4"
         cy="25"
-        r="15"
+        r="31"
         fill="hsl(345, 80%, 70%)"
     />
 
@@ -62,7 +62,7 @@
     <circle
         id="left-circle"
         cx="-1"
-        cy="-21"
+        cy="11"
         r="21"
         fill="hsl(275, 80%, 90%)"
         style="filter:url(#shadow);"

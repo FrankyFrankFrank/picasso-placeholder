@@ -42,10 +42,10 @@ class PicassoController extends Controller
 
         $left_eye_radius = rand($length_of_shortest_side / 15, $length_of_shortest_side / 2);
         $left_eye_x_position = rand($viewport_x, 0);
+        $left_eye_y_position = rand($mid_top, $mid_bottom);
 
         $right_eye_radius = rand($length_of_shortest_side / 8, $length_of_shortest_side);
         $right_eye_x_position = rand(0, -$viewport_x);
-        $left_eye_y_position = rand($mid_top, $mid_bottom);
 
         $left_shape_skew_x_distance = rand($width / 10, $width / 8);
         $left_shape_skew_y_distance = rand($height / 10, $height / 8);
