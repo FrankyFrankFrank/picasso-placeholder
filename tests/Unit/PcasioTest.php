@@ -85,7 +85,7 @@ class PcasioTest extends TestCase
             $response->viewData('right_eye_x_position'),
             $this->logicalAnd(
                 $this->greaterThan(0),
-                $this->lessThan($half_width)
+                $this->lessThanOrEqual($half_width)
             )
         );
     }
