@@ -45,17 +45,17 @@
 
     <path
         id="wavey-line"
-        d="{{ $wavey_line_points }}"
+        d="{{ $wavey_line['points'] }}"
         style="
             fill: none;
             stroke: hsla({{ $hue }}, {{ $saturation }}%, 40%, 0.5);
-            stroke-width: {{ $wavey_stroke_width }};
+            stroke-width: {{ $wavey_line['stroke_width'] }};
             transform: skewX({{ $left_shape_skew_y }});
         "
         transform="
-            rotate({{ $wavey_line_rotate }})
-            scale({{ $wavey_line_scale }})
-            translate({{ $wavey_line_translate_x }}, {{ $wavey_line_translate_y }})
+            rotate({{ $wavey_line['rotate'] }})
+            scale({{ $wavey_line['scale'] }})
+            translate({{ $wavey_line['translate_x'] }}, {{ $wavey_line['translate_y'] }})
         "
     />
 

@@ -70,6 +70,15 @@ class PicassoController extends Controller
         $wavey_line_scale = rand(20, 40) / 10;
         $wavey_line_rotate = rand(0, 360);
 
+        $wavey_line = [
+            'points' => $wavey_line_points,
+            'translate_x' => $wavey_line_translate_x,
+            'translate_y' => $wavey_line_translate_y,
+            'scale' => $wavey_line_scale,
+            'rotate' => $wavey_line_rotate,
+            'stroke_width' => $wavey_stroke_width,
+        ];
+
         $data = [
             'width' => $width,
             'height' => $height,
@@ -97,12 +106,7 @@ class PicassoController extends Controller
             'left_shape_skew_y' => $left_shape_skew_y,
             'left_shape_rotate' => $left_shape_rotate,
 
-            'wavey_line_points' => $wavey_line_points,
-            'wavey_line_translate_x' => $wavey_line_translate_x,
-            'wavey_line_translate_y' => $wavey_line_translate_y,
-            'wavey_line_scale' => $wavey_line_scale,
-            'wavey_line_rotate' => $wavey_line_rotate,
-            'wavey_stroke_width' => $wavey_stroke_width,
+            'wavey_line' => $wavey_line,
         ];
 
         return response()
