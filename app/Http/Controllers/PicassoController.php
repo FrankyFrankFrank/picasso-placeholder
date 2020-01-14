@@ -20,9 +20,17 @@ class PicassoController extends Controller
     public function show(SvgRequest $request, $width, $height)
     {
         if(! $request->has('seed')) {
-            // Calculate seed
+
             $seed = rand();
-            return redirect()->route('generate', ['width' => $width, 'height' => $height, 'seed' => $seed]);
+
+            return redirect()->route(
+                'generate',
+                [
+                    'width' => $width,
+                    'height' => $height,
+                    'seed' => $seed
+                ]
+            );
         }
 
         $this->generateSeed($request);
