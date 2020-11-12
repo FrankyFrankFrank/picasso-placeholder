@@ -12,6 +12,7 @@ class PcasioTest extends TestCase
 
     /** @test **/
     public function itGetsDimensionsFromRequest() {
+        $this->withoutExceptionHandling();
         $expected_width = '222';
         $expected_height = '111';
 
@@ -132,5 +133,25 @@ class PcasioTest extends TestCase
                 $this->lessThanOrEqual($expected_max_y_position)
             )
         );
+    }
+
+    /** @test 
+    */
+    public function itGetsImageAsSvg()
+    {
+        $response = $this->get('/300/500?seed=' . $this->testSeed);
+
+        $response->assertHeader('content-type', 'image/svg+xml');
+    }
+
+    /** @test 
+    */
+    public function itGetsImageAsPngIfRequested()
+    {
+        $this->withoutExceptionHandling();
+        $response = $this->get('/300/500?seed=' . $this->testSeed.'&type=png')
+            ->assertOk();
+
+        $response->assertHeader('content-type', 'image/png');
     }
 }

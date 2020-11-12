@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SvgRequest;
+use Illuminate\Support\Facades\View;
 
 /**
  * Class PicassoController
@@ -85,6 +86,19 @@ class PicassoController extends Controller
 
             'wavey_line' => $this->generate_wavey_line($length_of_shortest_side),
         ];
+
+        if ($request->query('type', 'svg') === 'png') {
+            $view = view('picasso', $data)->render();
+
+            $magic = new \Imagick();
+            $magic->readImageBlob($view);
+            $magic->setImageFormat('png24');
+
+
+            return response()
+                ->make($magic->getImageBlob())
+                ->header('Content-Type', 'image/png');
+        }
 
         return response()
             ->view('picasso', $data, 200)
