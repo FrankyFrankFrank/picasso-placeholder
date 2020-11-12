@@ -8,12 +8,14 @@ use Tests\TestCase;
 
 class PcasioTest extends TestCase
 {
+    public $testSeed = 'foo';
+
     /** @test **/
     public function itGetsDimensionsFromRequest() {
         $expected_width = '222';
         $expected_height = '111';
 
-        $response = $this->get('/' . $expected_width . '/'. $expected_height);
+        $response = $this->get('/' . $expected_width . '/'. $expected_height . '?seed=' . $this->testSeed);
 
         $response->assertViewHas('width', $expected_width);
         $response->assertViewHas('height', $expected_height);
@@ -23,7 +25,7 @@ class PcasioTest extends TestCase
     public function itGetsHueFromRequest() {
         $expected_hue = '345';
 
-        $response = $this->get('/100/100?hue=' . $expected_hue);
+        $response = $this->get('/100/100?hue=' . $expected_hue . '&seed=' . $this->testSeed);
 
         $response->assertViewHas('hue', $expected_hue);
     }
@@ -32,7 +34,7 @@ class PcasioTest extends TestCase
     public function itGetsSaturationFromRequest() {
         $expected_saturation = '88';
 
-        $response = $this->get('/100/100?saturation=' . $expected_saturation);
+        $response = $this->get('/100/100?saturation=' . $expected_saturation . '&seed=' . $this->testSeed);
 
         $response->assertViewHas('saturation', $expected_saturation);
     }
@@ -43,7 +45,7 @@ class PcasioTest extends TestCase
         $width = '420';
         $height = '630';
 
-        $response = $this->get('/'. $width . '/' . $height);
+        $response = $this->get('/'. $width . '/' . $height . '?seed=' . $this->testSeed);
 
         $response->assertViewHas('viewport_x', -210);
         $response->assertViewHas('viewport_y', -315);
@@ -55,7 +57,7 @@ class PcasioTest extends TestCase
         $width = '420';
         $height = '640';
 
-        $response = $this->get('/'. $width . '/' . $height);
+        $response = $this->get('/'. $width . '/' . $height . '?seed=' . $this->testSeed);
 
         $response->assertViewHas('mid_left', -105);
         $response->assertViewHas('mid_right', 105);
@@ -71,7 +73,7 @@ class PcasioTest extends TestCase
 
         $half_width = $width / 2;
 
-        $response = $this->get('/'. $width . '/' . $height);
+        $response = $this->get('/'. $width . '/' . $height . '?seed=' . $this->testSeed);
 
         $this->assertThat(
             $response->viewData('right_eye_radius'),
@@ -105,7 +107,7 @@ class PcasioTest extends TestCase
         $expected_min_y_position = -$height / 4;
         $expected_max_y_position = $height / 4;
 
-        $response = $this->get('/'. $width . '/' . $height);
+        $response = $this->get('/'. $width . '/' . $height . '?seed=' . $this->testSeed);
 
         $this->assertThat(
             $response->viewData('left_eye_radius'),
