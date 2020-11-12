@@ -5,9 +5,12 @@
 /vendor
 .env
 .env.backup
+.idea
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
 public/pcasio_of_the_day
+/coverage/
+/.vscode/
