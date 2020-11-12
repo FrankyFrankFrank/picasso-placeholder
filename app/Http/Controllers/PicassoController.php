@@ -25,11 +25,11 @@ class PicassoController extends Controller
 
             return redirect()->route(
                 'generate',
-                [
+                array_merge([
                     'width' => $width,
                     'height' => $height,
                     'seed' => $seed
-                ]
+                ], $request->query())
             );
         }
 
